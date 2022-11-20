@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Tazweer.Models.LostPassportInformation>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a  asp-action="Create">Create New</a>
+</p>
+@foreach(var item in Model){
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PassportOwnerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PassportType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DepartmentId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nationality)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dateofloss)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Thecommandbasedonit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Thenote)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Thereasonofdelete)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @item.PassportOwnerName
+            </td>
+            <td>
+                    @item.PassportType
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartmentId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nationality)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dateofloss)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Thecommandbasedonit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Thenote)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Thereasonofdelete)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.passportId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.passportId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.passportId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

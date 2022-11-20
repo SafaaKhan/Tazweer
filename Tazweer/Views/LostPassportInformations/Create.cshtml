@@ -1,0 +1,68 @@
+﻿@model Tazweer.Models.ViewModels.LostPassportInformationVM
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>LostPassportInformation</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PassportOwnerName" class="control-label"></label>
+                <input asp-for="PassportOwnerName" class="form-control" />
+                <span asp-validation-for="PassportOwnerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PassportType" class="control-label"></label>
+                <input asp-for="PassportType" class="form-control" />
+                <span asp-validation-for="PassportType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DepartmentId" class="control-label"></label>
+                <input asp-for="DepartmentId" class="form-control" />
+                <span asp-validation-for="DepartmentId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nationality" class="control-label"></label>
+                <input asp-for="Nationality" class="form-control" />
+                <span asp-validation-for="Nationality" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dateofloss" class="control-label"></label>
+                <input asp-for="Dateofloss" class="form-control" />
+                <span asp-validation-for="Dateofloss" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Thecommandbasedonit" class="control-label"></label>
+                <input asp-for="Thecommandbasedonit" class="form-control" />
+                <span asp-validation-for="Thecommandbasedonit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Thenote" class="control-label"></label>
+                <input asp-for="Thenote" class="form-control" />
+                <span asp-validation-for="Thenote" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Thereasonofdelete" class="control-label"></label>
+                <input asp-for="Thereasonofdelete" class="form-control" />
+                <span asp-validation-for="Thereasonofdelete" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
