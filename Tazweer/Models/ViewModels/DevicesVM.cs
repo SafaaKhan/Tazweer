@@ -11,10 +11,12 @@ namespace Tazweer.Models.ViewModels
         public int DevicesId { get; set; }
 
         [Display(Name = "الاجهزة")]
+        [Required(ErrorMessage ="الرجاء .." )]
         public string? NameDevice { get; set; }
 
 
         [Display(Name = "اضافة ملاحظة")]
+        [Required]
         public string? AddNote { get; set; }
 
         public int EmployeeId { get; set; }

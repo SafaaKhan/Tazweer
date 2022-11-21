@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -27,6 +28,7 @@ namespace Tazweer.Controllers
             return View(devices);
         }
 
+       
         // GET: Devices/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -144,6 +146,7 @@ namespace Tazweer.Controllers
         }
 
         // GET: Devices/Delete/5
+       // [Authorize(Roles ="Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Devices == null)
@@ -183,7 +186,7 @@ namespace Tazweer.Controllers
 
         private bool DevicesExists(int id)
         {
-          return _context.Devices.Any(e => e.DevicesId == id);
+          return _context.Devices.Any(x => x.DevicesId == id);
         }
     }
 }
