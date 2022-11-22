@@ -13,5 +13,7 @@ namespace Tazweer.Data
 
         public DbSet<LostPassportInformation> LostPassportInformation { get; set; }
         public DbSet<Devices> Devices { get; set; }
+        public DbSet<Department> Departments { get; set; }
+        public DbSet<Employee> Employees { get; set; }
     }
 }

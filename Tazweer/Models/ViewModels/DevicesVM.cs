@@ -19,8 +19,10 @@ namespace Tazweer.Models.ViewModels
         [Required]
         public string? AddNote { get; set; }
 
+        [Display(Name = "اسم الموظف")]
         public int EmployeeId { get; set; }
+        [Display(Name = "اسم الموظف")]
 
-        public Employee? Employee { get; set; }
+        public EmployeeVM? Employee { get; set; }
     }
 }
