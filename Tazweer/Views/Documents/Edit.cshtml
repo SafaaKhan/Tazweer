@@ -1,0 +1,59 @@
+﻿@model Tazweer.Models.ViewModels.DocumentsVM
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Documents</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="DocumentsId" />
+            <div class="form-group">
+                <label asp-for="Filename" class="control-label"></label>
+                <input asp-for="Filename" class="form-control" />
+                <span asp-validation-for="Filename" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Filetype" class="control-label"></label>
+                <input asp-for="Filetype" class="form-control" />
+                <span asp-validation-for="Filetype" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Filecon" class="control-label"></label>
+                <input asp-for="Filecon" class="form-control" />
+                <span asp-validation-for="Filecon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Filesize" class="control-label"></label>
+                <input asp-for="Filesize" class="form-control" />
+                <span asp-validation-for="Filesize" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="passportId" class="control-label"></label>
+                <select asp-for="passportId" class="form-control" asp-items="ViewBag.passportId"></select>
+                <span asp-validation-for="passportId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DocumentsTypeId" class="control-label"></label>
+                <select asp-for="DocumentsTypeId" class="form-control" asp-items="ViewBag.DocumentsTypeId"></select>
+                <span asp-validation-for="DocumentsTypeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

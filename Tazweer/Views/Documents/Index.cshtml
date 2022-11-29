@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Tazweer.Models.Documents>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Filename)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Filetype)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Filecon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Filesize)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.passportinformations)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DocumentsType)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Filename)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Filetype)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Filecon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Filesize)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.passportinformations.passportId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DocumentsType.DocumentsTypeId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.DocumentsId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.DocumentsId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.DocumentsId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

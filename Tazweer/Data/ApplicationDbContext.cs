@@ -15,5 +15,7 @@ namespace Tazweer.Data
         public DbSet<Devices> Devices { get; set; }
         public DbSet<Department> Departments { get; set; }
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<Documents> Documents { get; set; }
+        public DbSet<DocumentsType> DocumentsType { get; set; }
     }
 }
