@@ -48,6 +48,7 @@ namespace Tazweer.Controllers
         // GET: LostPassportInformations/Create
         public IActionResult Create()
         {
+            ViewBag.seccuss = "";
             return View();
         }
 
@@ -58,6 +59,7 @@ namespace Tazweer.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(LostPassportInformationVM lostPassportInformationVM)
         {
+
             if (ModelState.IsValid)
             {
                 var lostPassportInformation = new LostPassportInformation()
@@ -74,8 +76,12 @@ namespace Tazweer.Controllers
                 };
                 _context.Add(lostPassportInformation);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                ViewBag.seccuss = "the data has been saved seccussfully";
+                return View(lostPassportInformationVM);
+
+                //return RedirectToAction(nameof(Index));
             }
+            ViewBag.seccuss = "";
             return View(lostPassportInformationVM);
         }
 
